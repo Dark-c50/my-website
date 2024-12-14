@@ -9,7 +9,7 @@ body {
     /* إضافة صورة الخلفية (2006.jpg) على اليمين */
     background-image: url('2006.jpg'); /* تأكد من المسار الصحيح لصورة الخلفية */
     background-size: cover;  /* لتغطية كامل الشاشة */
-    background-position: center right;  /* الصورة على اليمين */
+    background-position: center;  /* الصورة على اليمين */
     background-attachment: fixed;  /* لجعل الصورة ثابتة عند التمرير */
     height: 100vh; /* لملء كامل الشاشة */
 }
