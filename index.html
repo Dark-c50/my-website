@@ -3,17 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع بسيط لقراءة بيانات العميل</title>
+    <title>موقع مشابه للمتاجر</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>أدخل بياناتك</h1>
-    <form id="userForm">
-        <label for="username">اسم المستخدم:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <span id="error-message" style="color: red; display: none;">الرجاء إدخال اسم المستخدم!</span><br><br>
-        <input type="submit" value="إرسال">
-    </form>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="Logo" class="logo">
+        </header>
+
+        <div class="main-content">
+            <h1>مرحبًا بك في موقعنا</h1>
+            <p>يرجى تسجيل الدخول للوصول إلى مميزات الموقع.</p>
+
+            <form id="userForm">
+                <div class="input-container">
+                    <label for="username">اسم المستخدم:</label>
+                    <input type="text" id="username" name="username" placeholder="أدخل اسم المستخدم" required>
+                    <span id="usernameError" class="error-message" style="display: none;">الرجاء إدخال اسم المستخدم!</span>
+                </div>
+
+                <div class="input-container">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" name="password" placeholder="أدخل كلمة المرور" required>
+                    <span id="passwordError" class="error-message" style="display: none;">الرجاء إدخال كلمة المرور!</span>
+                </div>
+
+                <input type="submit" value="تسجيل الدخول">
+                <span id="formSuccess" class="success-message" style="display: none;">تم إرسال البيانات بنجاح!</span>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
