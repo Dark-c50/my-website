@@ -1,4 +1,4 @@
-document.getElementById("userForm").addEventListener("submit", function(event) {
+document.getElementById("userForm").addEventListener("submit", function(event){
     event.preventDefault(); // منع إرسال النموذج حتى نتحقق من البيانات
 
     // الحصول على القيم المدخلة
@@ -11,16 +11,16 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
     document.getElementById("formSuccess").style.display = "none";
 
     // التحقق إذا كان الحقل فارغًا
-    if (username === "") {
+    if(username === "") {
         document.getElementById("usernameError").style.display = "block";
-    } else if (password === "") {
+    } else if(password === "") {
         document.getElementById("passwordError").style.display = "block";
     } else {
         document.getElementById("formSuccess").style.display = "block";
         console.log("اسم المستخدم: " + username);
         console.log("كلمة المرور: " + password);
 
-        // تحويل العميل إلى صفحة جوجل
+        // بعد إرسال البيانات بنجاح، نقوم بتحويل المستخدم إلى صفحة جوجل
         window.location.href = "https://www.google.com";
     }
 });
