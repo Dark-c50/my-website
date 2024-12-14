@@ -18,7 +18,30 @@ document.getElementById("userForm").addEventListener("submit", function(event){
     } else {
         document.getElementById("formSuccess").style.display = "block";
 
-        // التوجيه إلى صفحة dashboard بعد التحقق بنجاح
-        window.location.href = "dashboard.html";
+        // إرسال البيانات إلى الخادم باستخدام fetch
+        fetch('YOUR_SERVER_URL', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: username,
+                password: password
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // التحقق من نجاح الاستجابة من الخادم
+            if (data.success) {
+                console.log('تم تسجيل الدخول بنجاح');
+                window.location.href = "dashboard.html";  // الانتقال إلى صفحة لوحة التحكم بعد التسجيل
+            } else {
+                alert('فشل في تسجيل الدخول، يرجى المحاولة مرة أخرى');
+            }
+        })
+        .catch(error => {
+            console.error('خطأ في إرسال البيانات:', error);
+            alert('حدث خطأ أثناء إرسال البيانات');
+        });
     }
 });
