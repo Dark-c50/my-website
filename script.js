@@ -1,7 +1,6 @@
 document.getElementById("userForm").addEventListener("submit", function(event){
     event.preventDefault(); // منع إرسال النموذج حتى نتحقق من البيانات
 
-    // الحصول على القيم المدخلة
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
@@ -10,7 +9,6 @@ document.getElementById("userForm").addEventListener("submit", function(event){
     document.getElementById("passwordError").style.display = "none";
     document.getElementById("formSuccess").style.display = "none";
 
-    // التحقق إذا كان الحقل فارغًا
     if(username === "") {
         document.getElementById("usernameError").style.display = "block";
     } else if(password === "") {
@@ -19,5 +17,8 @@ document.getElementById("userForm").addEventListener("submit", function(event){
         document.getElementById("formSuccess").style.display = "block";
         console.log("اسم المستخدم: " + username);
         console.log("كلمة المرور: " + password);
+
+        // هنا يمكن توجيه المستخدم إلى الصفحة التالية بعد التحقق
+        window.location.href = "dashboard.html"; // إعادة توجيه للصفحة التالية
     }
 });
