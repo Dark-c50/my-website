@@ -1,31 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // التأكد من أن النموذج تم تحميله بشكل كامل
-    document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // منع إرسال النموذج بشكل افتراضي
+document.getElementById("userForm").addEventListener("submit", function(event){
+    event.preventDefault();  // منع إرسال النموذج حتى نتحقق من البيانات
 
-        // الحصول على القيم المدخلة
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
+    // الحصول على القيم المدخلة
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
 
-        // مسح رسائل الخطأ أو النجاح القديمة
-        document.getElementById("usernameError").style.display = "none";
-        document.getElementById("passwordError").style.display = "none";
-        document.getElementById("formSuccess").style.display = "none";
+    // مسح رسائل الخطأ أو النجاح القديمة
+    document.getElementById("usernameError").style.display = "none";
+    document.getElementById("passwordError").style.display = "none";
+    document.getElementById("formSuccess").style.display = "none";
 
-        // التحقق من المدخلات
-        if(username === "") {
-            document.getElementById("usernameError").style.display = "block"; // إظهار رسالة خطأ
-        } else if(password === "") {
-            document.getElementById("passwordError").style.display = "block"; // إظهار رسالة خطأ
-        } else {
-            document.getElementById("formSuccess").style.display = "block"; // إظهار رسالة نجاح
-            console.log("اسم المستخدم: " + username);
-            console.log("كلمة المرور: " + password);
+    // التحقق إذا كان الحقل فارغًا
+    if(username === "") {
+        document.getElementById("usernameError").style.display = "block";
+    } else if(password === "") {
+        document.getElementById("passwordError").style.display = "block";
+    } else {
+        document.getElementById("formSuccess").style.display = "block";
 
-            // إعادة التوجيه إلى صفحة الداشبورد بعد نجاح التحقق
-            setTimeout(function() {
-                window.location.href = "dashboard.html"; // توجه إلى صفحة الداشبورد بعد التحقق
-            }, 1000); // تأخير 1 ثانية لتظهر رسالة النجاح
-        }
-    });
+        // التوجيه إلى صفحة dashboard بعد التحقق بنجاح
+        window.location.href = "dashboard.html";
+    }
 });
