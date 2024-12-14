@@ -5,34 +5,37 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     text-align: center;
-
-    /* وضع الصورة كخلفية ثابتة */
-    background-image: url('2006.jpg'); /* المسار الخاص بالصورة */
+    
+    /* إضافة صورة الخلفية (2006.jpg) على اليمين */
+    background-image: url('2006.jpg'); /* تأكد من المسار الصحيح لصورة الخلفية */
     background-size: cover;  /* لتغطية كامل الشاشة */
-    background-position: center;  /* لجعل الصورة في المنتصف */
+    background-position: center right;  /* الصورة على اليمين */
     background-attachment: fixed;  /* لجعل الصورة ثابتة عند التمرير */
+    height: 100vh; /* لملء كامل الشاشة */
 }
 
-/* تخصيص الهيدر */
-.header {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.header-image {
-    width: 100%; /* تحديد حجم الصورة حسب المساحة المتاحة */
-    height: 200px; /* يمكن تعديل هذا الحجم حسب الحاجة */
-}
-
-/* تخصيص الهيكل */
+/* تخصيص الحاوية */
 .container {
     width: 80%;
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8); /* شفافية لتمكين رؤية الخلفية */
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تخصيص الهيدر مع الصورة */
+header {
+    margin-bottom: 20px;
+}
+
+/* تخصيص صورة اللوحة (على اليسار) */
+.icon {
+    width: 200px;  /* عرض الصورة */
+    height: auto;  /* الحفاظ على النسب */
+    display: block;
+    margin: 0 auto;  /* وضع الصورة في المنتصف */
 }
 
 /* النصوص */
