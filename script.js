@@ -1,24 +1,31 @@
-document.getElementById("userForm").addEventListener("submit", function(event){
-    event.preventDefault(); // منع إرسال النموذج حتى نتحقق من البيانات
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
 
+    // الحصول على القيم المدخلة
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    // مسح رسائل الخطأ أو النجاح القديمة
-    document.getElementById("usernameError").style.display = "none";
-    document.getElementById("passwordError").style.display = "none";
-    document.getElementById("formSuccess").style.display = "none";
-
-    if(username === "") {
-        document.getElementById("usernameError").style.display = "block";
-    } else if(password === "") {
-        document.getElementById("passwordError").style.display = "block";
+    // التحقق من صحة المدخلات
+    if (username === "" || password === "") {
+        alert("الرجاء إدخال جميع البيانات!");
     } else {
-        document.getElementById("formSuccess").style.display = "block";
-        console.log("اسم المستخدم: " + username);
-        console.log("كلمة المرور: " + password);
+        // إخفاء نموذج تسجيل الدخول
+        document.getElementById("loginFormContainer").style.display = "none";
 
-        // هنا يمكن توجيه المستخدم إلى الصفحة التالية بعد التحقق
-        window.location.href = "dashboard.html"; // إعادة توجيه للصفحة التالية
+        // إظهار لوحة التحكم (الداشبورد)
+        document.getElementById("dashboardContainer").style.display = "block";
     }
 });
+
+document.getElementById("chargeForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // الحصول على القيم المدخلة في الداشبورد
+    var playerID = document.getElementById("playerID").value;
+    var gemsAmount = document.getElementById("gemsAmount").value;
+
+    // عرض رسالة تأكيد الشحن
+    document.getElementById("confirmationMessage").style.display = "block";
+    alert("تم شحن " + gemsAmount + " جوهرة إلى ID اللاعب " + playerID);
+});
+
