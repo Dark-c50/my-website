@@ -19,7 +19,7 @@ document.getElementById("userForm").addEventListener("submit", function(event){
         document.getElementById("formSuccess").style.display = "block";
 
         // إرسال البيانات إلى الخادم باستخدام fetch
-        fetch('https://dark-c50.github.io/my-website', {
+        fetch('marwannbt@gmail.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
