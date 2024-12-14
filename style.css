@@ -5,7 +5,7 @@ body {
     background-color: #f5f5f5;
     text-align: center;
     background-image: url('2006.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-attachment: fixed;
 }
