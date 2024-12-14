@@ -5,7 +5,8 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     text-align: center;
-    background-image: url('2006.jpg'); /* المسار الفعلي للصورة */
+    
+background-image: url('2006.jpg'); /* المسار الفعلي للصورة */
 background-size: cover;  /* لتغطية كامل الشاشة */
 background-position: center;  /* لجعل الصورة في المنتصف */
 background-attachment: fixed;  /* لجعل الصورة ثابتة عند التمرير */
