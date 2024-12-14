@@ -1,47 +1,28 @@
-/* إعدادات أساسية */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     text-align: center;
-    
-    /* إضافة صورة الخلفية (2006.jpg) على اليمين */
-   background-image: url('./2006.jpg'); /* تأكد من المسار الصحيح لصورة الخلفية */
-    background-size: cover;  /* لتغطية كامل الشاشة */
-    background-position: center right;  /* الصورة على اليمين */
-    background-attachment: fixed;  /* لجعل الصورة ثابتة عند التمرير */
-    height: 100vh; /* لملء كامل الشاشة */
+    background-image: url('2006.jpg'); /* صورة الخلفية */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
 }
 
-/* تخصيص الحاوية */
 .container {
     width: 80%;
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* شفافية لتمكين رؤية الخلفية */
+    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* تخصيص الهيدر مع الصورة */
-header {
-    margin-bottom: 20px;
-}
-
-/* تخصيص صورة اللوحة (على اليسار) */
-.icon {
-    width: 200px;  /* عرض الصورة */
-    height: auto;  /* الحفاظ على النسب */
-    display: block;
-    margin: 0 auto;  /* وضع الصورة في المنتصف */
-}
-
-/* النصوص */
 h1 {
     font-size: 2.5em;
-    margin-bottom: 20px;
     color: #2c3e50;
 }
 
@@ -50,7 +31,6 @@ p {
     color: #7f8c8d;
 }
 
-/* تنسيق النموذج */
 form {
     width: 100%;
 }
@@ -65,7 +45,7 @@ label {
     color: #34495e;
 }
 
-input[type="text"], input[type="password"], input[type="submit"] {
+input[type="text"], input[type="number"], input[type="password"], input[type="submit"], select {
     width: 100%;
     padding: 15px;
     font-size: 1.1em;
@@ -84,7 +64,6 @@ input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
-/* رسائل الخطأ والنجاح */
 .error-message {
     color: red;
     font-size: 1.1em;
@@ -95,4 +74,10 @@ input[type="submit"]:hover {
     color: green;
     font-size: 1.2em;
     margin-top: 20px;
+}
+
+.success-message-charged {
+    color: #3498db;
+    font-size: 1.5em;
+    margin-top: 30px;
 }
