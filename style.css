@@ -30,3 +30,12 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049;
 }
+#userForm {
+    text-align: center;
+}
+
+#error-message {
+    color: red;
+    font-size: 1.1em;
+    display: none; /* نعرضها فقط عند الحاجة */
+}
