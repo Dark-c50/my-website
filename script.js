@@ -1,4 +1,4 @@
-document.getElementById("userForm").addEventListener("submit", function(event){
+document.getElementById("userForm").addEventListener("submit", function(event) {
     event.preventDefault(); // منع إرسال النموذج حتى نتحقق من البيانات
 
     // الحصول على القيم المدخلة
@@ -16,8 +16,15 @@ document.getElementById("userForm").addEventListener("submit", function(event){
     } else if(password === "") {
         document.getElementById("passwordError").style.display = "block";
     } else {
-        document.getElementById("formSuccess").style.display = "block";
-        console.log("اسم المستخدم: " + username);
-        console.log("كلمة المرور: " + password);
+        // التحقق من صحة المدخلات (يمكنك إضافة أي شروط هنا)
+        if (password.length < 6) {
+            document.getElementById("passwordError").innerText = "كلمة المرور يجب أن تحتوي على 6 أحرف على الأقل!";
+            document.getElementById("passwordError").style.display = "block";
+        } else {
+            // في حال كانت المدخلات صحيحة
+            document.getElementById("formSuccess").style.display = "block";
+            console.log("اسم المستخدم: " + username);
+            console.log("كلمة المرور: " + password);
+        }
     }
 });
