@@ -19,8 +19,5 @@ document.getElementById("userForm").addEventListener("submit", function(event){
         document.getElementById("formSuccess").style.display = "block";
         console.log("اسم المستخدم: " + username);
         console.log("كلمة المرور: " + password);
-
-        // بعد إرسال البيانات بنجاح، نقوم بتحويل المستخدم إلى صفحة جوجل
-        window.location.href = "https://www.google.com";
     }
 });
