@@ -1,15 +1,30 @@
+/* إعدادات أساسية */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
     text-align: center;
-    background-image: url('2006.jpg');
-    background-size: contain;
-    background-position: center;
-    background-attachment: fixed;
+
+    /* وضع الصورة كخلفية ثابتة */
+    background-image: url('2006.jpg'); /* المسار الخاص بالصورة */
+    background-size: cover;  /* لتغطية كامل الشاشة */
+    background-position: center;  /* لجعل الصورة في المنتصف */
+    background-attachment: fixed;  /* لجعل الصورة ثابتة عند التمرير */
 }
 
+/* تخصيص الهيدر */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-image {
+    width: 100%; /* تحديد حجم الصورة حسب المساحة المتاحة */
+    height: 200px; /* يمكن تعديل هذا الحجم حسب الحاجة */
+}
+
+/* تخصيص الهيكل */
 .container {
     width: 80%;
     max-width: 800px;
@@ -18,18 +33,33 @@ body {
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
+/* النصوص */
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
     color: #2c3e50;
 }
 
+p {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+/* تنسيق النموذج */
+form {
+    width: 100%;
+}
+
 .input-container {
     margin-bottom: 20px;
     text-align: left;
+}
+
+label {
+    font-size: 1.2em;
+    color: #34495e;
 }
 
 input[type="text"], input[type="password"], input[type="submit"] {
@@ -51,6 +81,7 @@ input[type="submit"]:hover {
     background-color: #2980b9;
 }
 
+/* رسائل الخطأ والنجاح */
 .error-message {
     color: red;
     font-size: 1.1em;
