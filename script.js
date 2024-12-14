@@ -1,18 +1,23 @@
 document.getElementById("userForm").addEventListener("submit", function(event){
     event.preventDefault(); // منع إرسال النموذج حتى نتحقق من البيانات
 
-    // الحصول على القيمة المدخلة في الحقل
+    // الحصول على القيم المدخلة
     var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // مسح رسائل الخطأ أو النجاح القديمة
+    document.getElementById("usernameError").style.display = "none";
+    document.getElementById("passwordError").style.display = "none";
+    document.getElementById("formSuccess").style.display = "none";
 
     // التحقق إذا كان الحقل فارغًا
     if(username === "") {
-        // إذا كان فارغًا، نعرض رسالة خطأ للمستخدم
-        alert("الرجاء إدخال اسم المستخدم!");
+        document.getElementById("usernameError").style.display = "block";
+    } else if(password === "") {
+        document.getElementById("passwordError").style.display = "block";
     } else {
-        // إذا كانت البيانات صحيحة، نعرضها في الكونسول
+        document.getElementById("formSuccess").style.display = "block";
         console.log("اسم المستخدم: " + username);
-
-        // إذا كنت ترغب في إظهار رسالة للمستخدم بعد إرسال البيانات
-        alert("تم إرسال البيانات بنجاح!");
+        console.log("كلمة المرور: " + password);
     }
 });
