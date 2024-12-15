@@ -29,31 +29,9 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
         // تخزين حالة تسجيل الدخول في الـ LocalStorage
         localStorage.setItem('loggedIn', true);
 
-        // إرسال البيانات إلى الخادم باستخدام fetch (تستطيع تعديل الرابط لاحقًا)
-        fetch('https://your-server-endpoint.com/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            // التحقق من نجاح الاستجابة من الخادم
-            if (data.success) {
-                console.log('تم تسجيل الدخول بنجاح');
-                window.location.href = "dashboard.html";  // الانتقال إلى صفحة لوحة التحكم بعد التسجيل
-            } else {
-                alert('فشل في تسجيل الدخول، يرجى المحاولة مرة أخرى');
-            }
-        })
-        .catch(error => {
-            console.error('خطأ في إرسال البيانات:', error);
-            alert('حدث خطأ أثناء إرسال البيانات');
-        });
+        // التوجيه إلى لوحة التحكم مباشرة (تجاوز الخادم مؤقتًا)
+        setTimeout(() => {
+            window.location.href = "dashboard.html"; // الانتقال إلى صفحة لوحة التحكم بعد التحقق
+        }, 1000); // تأخير صغير لعرض رسالة النجاح أولًا
     }
 });
