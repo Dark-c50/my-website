@@ -3,16 +3,24 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
 
     // الحصول على القيم المدخلة
     var username = document.getElementById("username").value.trim();
+    var email = document.getElementById("email").value.trim();
     var password = document.getElementById("password").value.trim();
 
     // مسح رسائل الخطأ أو النجاح القديمة
     document.getElementById("usernameError").style.display = "none";
+    document.getElementById("emailError").style.display = "none";
     document.getElementById("passwordError").style.display = "none";
     document.getElementById("formSuccess").style.display = "none";
 
-    // التحقق إذا كان الحقل فارغًا
+    // التحقق من صحة البريد الإلكتروني باستخدام تعبير عادي (regular expression)
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    var isEmailValid = emailPattern.test(email);
+
+    // التحقق إذا كان الحقل فارغًا أو البريد الإلكتروني غير صحيح
     if (username === "") {
         document.getElementById("usernameError").style.display = "block";
+    } else if (!isEmailValid) {
+        document.getElementById("emailError").style.display = "block";
     } else if (password === "") {
         document.getElementById("passwordError").style.display = "block";
     } else {
@@ -29,6 +37,7 @@ document.getElementById("userForm").addEventListener("submit", function(event) {
             },
             body: JSON.stringify({
                 username: username,
+                email: email,
                 password: password
             })
         })
