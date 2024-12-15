@@ -47,6 +47,11 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // التحقق من حالة تسجيل الدخول عند تحميل الصفحة
+        if (!localStorage.getItem('loggedIn')) {
+            window.location.href = "index.html"; // إعادة التوجيه إلى صفحة تسجيل الدخول
+        }
+    </script>
 </body>
 </html>
