@@ -1,9 +1,9 @@
-document.getElementById("userForm").addEventListener("submit", function(event){
-    event.preventDefault();  // منع إرسال النموذج حتى نتحقق من البيانات
+document.getElementById("userForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // منع إرسال النموذج حتى نتحقق من البيانات
 
     // الحصول على القيم المدخلة
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
+    var username = document.getElementById("username").value.trim();
+    var password = document.getElementById("password").value.trim();
 
     // مسح رسائل الخطأ أو النجاح القديمة
     document.getElementById("usernameError").style.display = "none";
@@ -11,15 +11,18 @@ document.getElementById("userForm").addEventListener("submit", function(event){
     document.getElementById("formSuccess").style.display = "none";
 
     // التحقق إذا كان الحقل فارغًا
-    if(username === "") {
+    if (username === "") {
         document.getElementById("usernameError").style.display = "block";
-    } else if(password === "") {
+    } else if (password === "") {
         document.getElementById("passwordError").style.display = "block";
     } else {
         document.getElementById("formSuccess").style.display = "block";
 
-        // إرسال البيانات إلى الخادم باستخدام fetch
-        fetch('marwannbt@gmail.com', {
+        // تخزين حالة تسجيل الدخول في الـ LocalStorage
+        localStorage.setItem('loggedIn', true);
+
+        // إرسال البيانات إلى الخادم باستخدام fetch (تستطيع تعديل الرابط لاحقًا)
+        fetch('https://your-server-endpoint.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
